@@ -21,7 +21,7 @@ setInterval(function validation(){;
     if(error.textContent !== ''){
         error.textContent = '';
     }
-    if (emailValidation(input) == true && checkBoxValidation(checkBox) == false){
+    if (emailValidation(input) == true && checkBoxValidation(checkBox) == true){
         inputButton.classList.remove('hide');
         return true;
     }

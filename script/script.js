@@ -39,6 +39,7 @@ inputButton.onclick = function(event){
     event.preventDefault();
     let form = document.querySelector('form');
     form.classList.add('hide');
+    document.querySelector('.complete').classList.remove('hide');
     h1.textContent = "Thanks for subscribing!"
     p.textContent = "You have successfully subscribed to our email listing. Check your email for the discount code.";
 }

@@ -23,25 +23,42 @@ setInterval(function validation(){;
     }
     if (emailValidation(input) == true && checkBoxValidation(checkBox) == true){
         inputButton.classList.remove('hide');
+        errors.status = true;
         return true;
     }
     else {
         bannedDomain(input);
         inputButton.classList.add('hide');
         checkBoxValidation(checkBox);
+        return false;
     }
+    
 }, 500);
 
 input.addEventListener('change',bannedDomain(input));
+input.addEventListener('keydown',(event)=>{
+    if(error.status === false){
+        event.preventDefault();
+        console.log('no')
+    }
+    else {
+        error.status === true;
+    }
+});
+
+console.dir(inputButton)
 
 // If there are no errors 
 inputButton.onclick = function(event){
     event.preventDefault();
-    let form = document.querySelector('form');
-    form.classList.add('hide');
-    document.querySelector('.complete').classList.remove('hide');
-    h1.textContent = "Thanks for subscribing!"
-    p.textContent = "You have successfully subscribed to our email listing. Check your email for the discount code.";
+    if (errors.status === true){
+        event.preventDefault();
+        let form = document.querySelector('form');
+        form.classList.add('hide');
+        document.querySelector('.complete').classList.remove('hide');
+        h1.textContent = "Thanks for subscribing!";
+        p.textContent = "You have successfully subscribed to our email listing. Check your email for the discount code.";
+    }
 }
 
 //Banned Domain function
@@ -80,11 +97,11 @@ function emailValidation(input){
 }
 // Checbkbox validation function 
 function checkBoxValidation(checkBox){
-    if(checkBox.checked == true){
+    if(checkBox.checked === true){
         errors.status = true;
         return true;
     }
-    else if (checkBox.checked == false){
+    else if (checkBox.checked === false){
         let liCheckBox = document.createElement('li');
         error.append(liCheckBox);
         liCheckBox.append(errors.terms);

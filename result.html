@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,40 +32,35 @@
                  <a href=""><li class="contact navlist">Contact</li></a>   
                 </div>
             </nav>
-            <main>
-                <div class="complete hide"><img src="images/ic_success.svg" alt=""></div>
-                <h1>
-                    Subscribe to newsletter
-                </h1>
-                <p class="subscribe">Subscribe to our newsletter and get 10% discount on pineapple glasses.</p>
-                <form name="mail" action="server.php" method="post">
+                <main>
+                <div class="complete"><img src="images/ic_success.svg" alt=""></div>
+                <h1>Thanks for subscribing!</h1>
+                <p class="subscribe">You have successfully subscribed to our email listing. Check your email for the discount code.</p>
+                <form name="e_mail" method="post" class="hide">
                     <div class="inputcontainer">
                         <input name="msg" class="email" type="email" placeholder="Type your email adress here...">
-                       <button type="submit" class="inputbutton"></button>
-                       <ul class="error">
-                           <li>
-                        </li>  
-                       </ul>
+                        <button type="submit" class="inputbutton"></button>
+                        <ul class="error"></ul>
                     </div>
                     <div class="termsofservice">
-                        <input name="checkbox" class="checkboxStyle" type="checkbox">
+                        <input class="checkboxStyle" type="checkbox">
                         <label class="termsofservicevertical" for="checkbox">I agree to <a class="termsund" href="">terms of service
                             </a>
                         </label>
-                    </div>
-                     
+                    </div>     
                 </form>
                 <hr>
                 <div class="socialmedia">
-                   <a class="facebook" href=""></a> 
-                   <a class='instagram' href=""></a> 
-                   <a class='twitter' href=""></a> 
-                   <a class="youtube"href=""></a> 
+                    <a class="facebook" href=""></a> 
+                    <a class='instagram' href=""></a> 
+                    <a class='twitter' href=""></a> 
+                    <a class="youtube"href=""></a> 
                 </div>
             </main>
         </div>
         <div class="backgroundimage"></div>
     </div>
-<script src="script/script.js"></script>
+</main>
+    <script src="script/script.js"></script>
 </body>
 </html>
